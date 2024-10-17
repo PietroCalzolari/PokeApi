@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Jobs\PokemonImport;
+use App\Models\Pokemon;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
@@ -40,6 +41,7 @@ class Import extends Command
         }
         else {
             Log::error('Bad call to ' . $apiUrl . ' : ' . $response->status());
+            return 1;
         }
     }
 }
