@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('versions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('pokeapiid');
+            $table->unsignedInteger('pokeid');
             $table->timestamps();
         });
     }

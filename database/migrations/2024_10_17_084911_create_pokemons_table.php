@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pokemons', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('pokeapiid');
+            $table->unsignedInteger('pokeid');
             $table->string('name');
             $table->integer('base_experience');
             $table->text('height');
