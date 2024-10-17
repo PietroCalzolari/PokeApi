@@ -1,6 +1,6 @@
 # PokeApi
 
-Api Project that make you know everything about Pokemons
+Api Project that makes you know everything about Pokemons
 
 ## INSTALLATION
 
