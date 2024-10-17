@@ -10,8 +10,7 @@ Api Project that makes you know everything about Pokemons
 
 - Launch **ddev start** (the docker containers will be created)
 
-- Launch **ddev artisan migrate** (the Laravel command to launch
-migrations, files that create the database tables)
+- Launch **ddev import-db --file=./db.sql** if you want to import a ready database with datas otherwise launch **ddev artisan migrate** (the Laravel command to launch migrations, files that create the database tables) that creates an empty database instance
 
 - Launch **ddev launch** in order to open your favourite browser with the
 local project
@@ -21,6 +20,9 @@ local project
 ## Database
 A prepared DB already full of data is ready for you in the repo, just import it in your database with
 **ddev import-db --file=./db.sql**
+
+If you want to see it just launch this command:
+**ddev phpmyadmin**
 
 ## API
 A collection with all the API you can call from the project is ready for you, you can import it in Postman, its name is **collection.json**
