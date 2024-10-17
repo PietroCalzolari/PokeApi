@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('moves', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('pokeid');
+            $table->unsignedInteger('pokeid')->unique();
             $table->string('name');
             $table->text('effect')->nullable();
             $table->integer('pp')->nullable();;

@@ -28,7 +28,7 @@ class Import extends Command
      */
     public function handle()
     {
-        $apiUrl = 'https://pokeapi.co/api/v2/pokemon';
+        $apiUrl = 'https://pokeapi.co/api/v2/pokemon?limit=-1';
         $response = Http::get($apiUrl);
         if ($response->successful()) {
             $data = $response->json();

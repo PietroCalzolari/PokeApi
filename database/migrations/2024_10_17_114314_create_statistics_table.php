@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('statistics', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('pokeid');
+            $table->unsignedInteger('pokeid')->unique();
             $table->string('name');
             $table->timestamps();
 
