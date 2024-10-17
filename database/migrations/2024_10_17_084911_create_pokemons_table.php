@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('pokeid');
             $table->string('name');
-            $table->integer('base_experience');
-            $table->text('height');
-            $table->text('weight');
+            $table->integer('base_experience')->nullable();
+            $table->text('height')->nullable();
+            $table->text('weight')->nullable();
             $table->timestamps();
         });
     }

@@ -7,7 +7,7 @@ use App\Models\Pokemon;
 
 class Move extends Model
 {
-    protected $fillable = ['pokeid', 'name', 'effect', 'pp', 'type'];
+    protected $fillable = ['pokeid', 'name', 'effect', 'pp', 'type', 'accuracy', 'power'];
 
     protected $table ='moves';
 
