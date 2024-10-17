@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('pokemon', function (Blueprint $table) {
             $table->id();
+            $table->integer('pokeapi_id');
+            $table->text('name');
+            $table->integer('base_experience');
+            $table->text('height');
+            $table->text('weight');
             $table->timestamps();
+
+            //TODO: add tables for moves, statistics and types
         });
     }
 
