@@ -17,3 +17,13 @@ migrations, files that create the database tables)
 local project
 
 # IF YOU SEE A GREEN SCREEN WITH A POKEBALL YOU ARE READY!
+
+A prepared DB already full of data is ready for you in the repo, just import it in your database with
+**ddev import-db --file=./db.sql**
+
+A collection with all the API you can call from the project is ready for you, you can import it in Postman, its name is **collection.json**
+
+If you need any other help just write me:
+**pietrocalzolari@live.com**
+
+# Thanks
