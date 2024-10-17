@@ -4,7 +4,7 @@ Api Project that make you know everything about Pokemons
 
 ## INSTALLATION
 
-- Install **docker **and **ddev**: <https://ddev.com/get-started/>
+- Install **docker** and **ddev**: <https://ddev.com/get-started/>
 
 - Extract the project in the folder you prefer
 
