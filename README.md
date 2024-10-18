@@ -30,8 +30,14 @@ If you want to see it just launch this command:
 A collection with all the API you can call from the project is ready for you, you can import it in Postman, its name is **collection.json**
 
 ## DDEV
-I have already installed in the ddev instance of this project phpmyadmin so that the database could be seen very easily. Just launch **ddev phpmyadmin** and the browser will open a new tab with phpmyadmin already open. The database name will be db!
-To stop the ddev container you can run **ddev stop**, this is the opposite of ddev start. In order to clear the cache of the project you can launch **ddev artisan cache:clear** but in Laravel you will not need it very much.
+I have already installed in the ddev instance of this project phpmyadmin so that the database could be seen very easily. Just launch **ddev phpmyadmin** and the browser will open a new tab with phpmyadmin already open. 
+
+The database name will be **db**!
+
+To stop the ddev container you can run **ddev stop**, this is the opposite of ddev start. 
+
+In case you need to clear the cache of the project you can launch **ddev artisan cache:clear** but in Laravel you will not need it very much.
+
 In order to have information about the ddev containers of the project you can run **ddev describe**
 
 ## Command and Jobs
