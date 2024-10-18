@@ -11,7 +11,9 @@ Api Project that makes you know everything about Pokemons
 - Launch **ddev start** (the docker containers will be created)
 
 - Launch **ddev import-db --file=./db.sql** if you want to import a ready database with datas otherwise launch **ddev artisan migrate** (the Laravel command to launch migrations, files that create the database tables) that creates an empty database instance
-
+- Launch **ddev composer** install
+- Launch **ddev artisan key:generate**
+- Launch **ddev artisan config:cache**
 - Launch **ddev launch** in order to open your favourite browser with the
 local project
 
