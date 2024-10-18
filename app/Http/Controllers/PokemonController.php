@@ -30,21 +30,37 @@ class PokemonController extends Controller
         if ($request->has('perPage') && (int) $request->input('perPage'))
             $this->perPage = $request->input('perPage');
 
+        if ($request->has('withMoves') && (int) $request->input('withMoves') == 1)
+            $pokemons = $pokemons->with('moves');
+
+        if ($request->has('withTypes') && (int) $request->input('withTypes') == 1)
+            $pokemons = $pokemons->with('types');
+
+        if ($request->has('withStats') && (int) $request->input('withStats') == 1)
+            $pokemons = $pokemons->with('statistics');
+
         return $pokemons->paginate($this->perPage);
     }
 
     /**
      * Show the pokemon by id or name
      */
-    public function show(string $id)
+    public function show(Request $request, string $id)
     {
-        $pokemon = Pokemon::find($id);
-        if ($pokemon)
-            return $pokemon;
+        $pokemon = Pokemon::where('id', $id)->orWhere('name', 'like', '%' . $id . '%');
 
-        $pokemon = Pokemon::where('name', 'like', '%' . $id . '%')->first();
-        if ($pokemon)
-            return $pokemon;
+        if ($pokemon) {
+            if ($request->has('withMoves') && (int) $request->input('withMoves') == 1)
+                $pokemon = $pokemon->with('moves');
+
+            if ($request->has('withTypes') && (int) $request->input('withTypes') == 1)
+                $pokemon = $pokemon->with('types');
+
+            if ($request->has('withStats') && (int) $request->input('withStats') == 1)
+                $pokemon = $pokemon->with('statistics');
+
+            return $pokemon->first();
+        }
 
         return Response::json(['message' => 'Pokemon not found'], 404);
     }
