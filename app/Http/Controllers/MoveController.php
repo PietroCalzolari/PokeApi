@@ -5,16 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\Move;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
+use App\Http\Helpers\RequestHelper;
 
 class MoveController extends Controller
 {
 
-    protected int $perPage;
+    protected int $perPage = 10;
 
-
-    public function __construct()
+    public function setPerPage(Request $request)
     {
-        $this->perPage = env('APP_PER_PAGE', 10);
+        if ($request->has('perPage') && (int) $request->input('perPage')) {
+            $this->perPage = $request->input('perPage');
+        }
+        return;
     }
 
     /**
@@ -24,11 +27,8 @@ class MoveController extends Controller
     {
         $moves = Move::query();
 
-        if ($request->has('name'))
-            $moves = Move::where('name', 'like', '%' . $request->input('name') . '%');
-
-        if ($request->has('perPage') && (int) $request->input('perPage'))
-            $this->perPage = $request->input('perPage');
+        RequestHelper::addFilter($request, $moves);
+        $this->setPerPage($request);
 
         return $moves->paginate($this->perPage);
     }
@@ -36,15 +36,14 @@ class MoveController extends Controller
     /**
      * Display the move by id or name.
      */
-    public function show(string $id)
+    public function show(Request $request, string $id)
     {
-        $move = Move::find($id);
-        if ($move)
-            return $move;
+        $move = Move::where('id', $id)->orWhere('name', 'like', '%' . $id . '%');
+        if ($move) {
+            RequestHelper::addFilter($request, $move);
 
-        $move = Move::where('name', 'like', '%' . $id . '%')->first();
-        if ($move)
-            return $move;
+            return $move->first();
+        }
 
         return Response::json(['message' => 'Pokemon\'s move not found'], 404);
     }

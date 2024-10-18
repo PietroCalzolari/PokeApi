@@ -2,48 +2,47 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Helpers\RequestHelper;
 use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
 class TypeController extends Controller
 {
-    protected int $perPage;
+    protected int $perPage = 10;
 
-
-    public function __construct()
+    public function setPerPage(Request $request)
     {
-        $this->perPage = env('APP_PER_PAGE', 10);
+        if ($request->has('perPage') && (int) $request->input('perPage')) {
+            $this->perPage = $request->input('perPage');
+        }
+        return;
     }
 
     /**
-     * Display a listing of the stats.
+     * Display a listing of Pokemons' types.
      */
     public function index(Request $request)
     {
         $types = Type::query();
 
-        if ($request->has('name'))
-            $types = Type::where('name', 'like', '%' . $request->input('name') . '%');
-
-        if ($request->has('perPage') && (int) $request->input('perPage'))
-            $this->perPage = $request->input('perPage');
+        RequestHelper::addFilter($request, $types);
+        $this->setPerPage($request);
 
         return $types->paginate($this->perPage);
     }
 
     /**
-     * Display the specified type by id or name.
+     * Show the Pokemon's type retrieving the type from the id or the name.
      */
-    public function show(string $id)
+    public function show(Request $request, string $id)
     {
-        $type = Type::find($id);
-        if ($type)
-            return $type;
+        $type = Type::where('id', $id)->orWhere('name', 'like', '%' . $id . '%');
+        if ($type) {
+            RequestHelper::addFilter($request, $type);
 
-        $type = Type::where('name', 'like', '%' . $id . '%')->first();
-        if ($type)
-            return $type;
+            return $type->first();
+        }
         return Response::json(['message' => 'Pokemon\'s type not found'], 404);
     }
 }

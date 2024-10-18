@@ -27,4 +27,9 @@ class Pokemon extends Model
     {
         return $this->belongsToMany(Statistic::class, 'pokemon_statistics', 'pokemon_id', 'statistic_id')->withPivot('value');
     }
+
+    public function statsMoreThan($value)
+    {
+
+    }
 }

@@ -5,15 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Statistic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
+use App\Http\Helpers\RequestHelper;
 
 class StatisticController extends Controller
 {
-    protected int $perPage;
+    protected int $perPage = 10;
 
-
-    public function __construct()
+    public function setPerPage(Request $request)
     {
-        $this->perPage = env('APP_PER_PAGE', 10);
+        if ($request->has('perPage') && (int) $request->input('perPage')) {
+            $this->perPage = $request->input('perPage');
+        }
+        return;
     }
 
     /**
@@ -23,28 +26,22 @@ class StatisticController extends Controller
     {
         $stats = Statistic::query();
 
-        // dd($stats);
-        if ($request->has('name'))
-            $stats = Statistic::where('name', 'like', '%' . $request->input('name') . '%');
-
-        if ($request->has('perPage') && (int) $request->input('perPage'))
-            $this->perPage = $request->input('perPage');
+        RequestHelper::addFilter($request, $stats);
+        $this->setPerPage($request);
 
         return $stats->paginate($this->perPage);
     }
 
     /**
-     * Display the specified stat by id or name.
+     * Show the Pokemon's statistic retrieving it from the id or the name
      */
-    public function show(string $id)
+    public function show(Request $request, string $id)
     {
-        $stat = Statistic::find($id);
-        if ($stat)
-            return $stat;
-
-        $stat = Statistic::where('name', 'like', '%' . $id . '%')->first();
-        if ($stat)
-            return $stat;
+        $stat = Statistic::where('id', $id)->orWhere('name', 'like', '%' . $id . '%');
+        if ($stat) {
+            RequestHelper::addFilter($request, $stat);
+            return $stat->first();
+        }
         return Response::json(['message' => 'Pokemon\'s statistic not found'], 404);
     }
 }
