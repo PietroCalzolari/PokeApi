@@ -1,0 +1,658 @@
+{
+  "collection": {
+    "info": {
+      "_postman_id": "82e61a1c-6fca-436e-a4a4-40a35e7eb64e",
+      "name": "PokeAPI",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "updatedAt": "2024-10-18T14:53:29.000Z",
+      "createdAt": "2024-10-14T19:27:12.000Z",
+      "lastUpdatedBy": "33149335",
+      "uid": "33149335-82e61a1c-6fca-436e-a4a4-40a35e7eb64e"
+    },
+    "item": [
+      {
+        "name": "Pokemons",
+        "item": [
+          {
+            "name": "Pokemons List",
+            "id": "84aad0a8-5197-4891-8655-b44c3e1d16de",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://pokeapi.ddev.site/api/pokemon?perPage=10&page=1&withMove=false&withType=false&withStat=false",
+                "protocol": "http",
+                "host": [
+                  "pokeapi",
+                  "ddev",
+                  "site"
+                ],
+                "path": [
+                  "api",
+                  "pokemon"
+                ],
+                "query": [
+                  {
+                    "key": "perPage",
+                    "value": "10"
+                  },
+                  {
+                    "key": "page",
+                    "value": "1"
+                  },
+                  {
+                    "key": "withMove",
+                    "value": "false"
+                  },
+                  {
+                    "key": "withType",
+                    "value": "false"
+                  },
+                  {
+                    "key": "withStat",
+                    "value": "false"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "33149335-84aad0a8-5197-4891-8655-b44c3e1d16de"
+          },
+          {
+            "name": "Pokemon ID",
+            "id": "ea51611a-e429-4433-93b5-43979b1c3b65",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://pokeapi.ddev.site/api/pokemon/1?withMove=false&withStat=true&withType=true",
+                "protocol": "http",
+                "host": [
+                  "pokeapi",
+                  "ddev",
+                  "site"
+                ],
+                "path": [
+                  "api",
+                  "pokemon",
+                  "1"
+                ],
+                "query": [
+                  {
+                    "key": "withMove",
+                    "value": "false"
+                  },
+                  {
+                    "key": "withStat",
+                    "value": "true"
+                  },
+                  {
+                    "key": "withType",
+                    "value": "true"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "33149335-ea51611a-e429-4433-93b5-43979b1c3b65"
+          },
+          {
+            "name": "Pokemon Name",
+            "id": "a30332bc-d186-488f-89d6-d607cdced52e",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://pokeapi.ddev.site/api/pokemon/bulbasaur?withMove=false&withStat=true&withType=true",
+                "protocol": "http",
+                "host": [
+                  "pokeapi",
+                  "ddev",
+                  "site"
+                ],
+                "path": [
+                  "api",
+                  "pokemon",
+                  "bulbasaur"
+                ],
+                "query": [
+                  {
+                    "key": "withMove",
+                    "value": "false"
+                  },
+                  {
+                    "key": "withStat",
+                    "value": "true"
+                  },
+                  {
+                    "key": "withType",
+                    "value": "true"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "33149335-a30332bc-d186-488f-89d6-d607cdced52e"
+          }
+        ],
+        "id": "48d70c6d-cd00-4a1a-853a-e424608ff4b2",
+        "uid": "33149335-48d70c6d-cd00-4a1a-853a-e424608ff4b2"
+      },
+      {
+        "name": "Moves",
+        "item": [
+          {
+            "name": "Moves List",
+            "id": "b2c18982-4980-448f-93cc-4ce9e66a1b29",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://pokeapi.ddev.site/api/move?perPage=5&page=3&withPokemon=true",
+                "protocol": "http",
+                "host": [
+                  "pokeapi",
+                  "ddev",
+                  "site"
+                ],
+                "path": [
+                  "api",
+                  "move"
+                ],
+                "query": [
+                  {
+                    "key": "perPage",
+                    "value": "5"
+                  },
+                  {
+                    "key": "page",
+                    "value": "3"
+                  },
+                  {
+                    "key": "withPokemon",
+                    "value": "true"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "33149335-b2c18982-4980-448f-93cc-4ce9e66a1b29"
+          },
+          {
+            "name": "Move ID",
+            "id": "6a6b0011-946b-4358-bf46-6d3f9c45e7dd",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://pokeapi.ddev.site/api/move/1?withPokemon=true",
+                "protocol": "http",
+                "host": [
+                  "pokeapi",
+                  "ddev",
+                  "site"
+                ],
+                "path": [
+                  "api",
+                  "move",
+                  "1"
+                ],
+                "query": [
+                  {
+                    "key": "withPokemon",
+                    "value": "true"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "33149335-6a6b0011-946b-4358-bf46-6d3f9c45e7dd"
+          },
+          {
+            "name": "Move Name",
+            "id": "b8ac67f4-7449-41ad-acf7-796fc9956b4f",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://pokeapi.ddev.site/api/move/razor-wind?withPokemon=true",
+                "protocol": "http",
+                "host": [
+                  "pokeapi",
+                  "ddev",
+                  "site"
+                ],
+                "path": [
+                  "api",
+                  "move",
+                  "razor-wind"
+                ],
+                "query": [
+                  {
+                    "key": "withPokemon",
+                    "value": "true"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "33149335-b8ac67f4-7449-41ad-acf7-796fc9956b4f"
+          }
+        ],
+        "id": "c59f5f0a-0ede-49d3-afb5-05be0292c201",
+        "uid": "33149335-c59f5f0a-0ede-49d3-afb5-05be0292c201"
+      },
+      {
+        "name": "Stats",
+        "item": [
+          {
+            "name": "Stats List",
+            "id": "f202558a-b0c1-4f84-bb5e-a865c85556a5",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://pokeapi.ddev.site/api/stat?perPage=15&withPokemon=false",
+                "protocol": "http",
+                "host": [
+                  "pokeapi",
+                  "ddev",
+                  "site"
+                ],
+                "path": [
+                  "api",
+                  "stat"
+                ],
+                "query": [
+                  {
+                    "key": "perPage",
+                    "value": "15"
+                  },
+                  {
+                    "key": "withPokemon",
+                    "value": "false"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "33149335-f202558a-b0c1-4f84-bb5e-a865c85556a5"
+          },
+          {
+            "name": "Stat ID",
+            "id": "187355b5-3262-4595-9ab5-972262d7c540",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://pokeapi.ddev.site/api/stat/1?withPokemon=false",
+                "protocol": "http",
+                "host": [
+                  "pokeapi",
+                  "ddev",
+                  "site"
+                ],
+                "path": [
+                  "api",
+                  "stat",
+                  "1"
+                ],
+                "query": [
+                  {
+                    "key": "withPokemon",
+                    "value": "false"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "33149335-187355b5-3262-4595-9ab5-972262d7c540"
+          },
+          {
+            "name": "Stat Name",
+            "id": "5a3f0e77-7966-4bc4-abff-66a72221d263",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://pokeapi.ddev.site/api/stat/attack?withPokemon=false",
+                "protocol": "http",
+                "host": [
+                  "pokeapi",
+                  "ddev",
+                  "site"
+                ],
+                "path": [
+                  "api",
+                  "stat",
+                  "attack"
+                ],
+                "query": [
+                  {
+                    "key": "withPokemon",
+                    "value": "false"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "33149335-5a3f0e77-7966-4bc4-abff-66a72221d263"
+          }
+        ],
+        "id": "2d53bff8-4636-4f8b-bb50-f65d0640149a",
+        "uid": "33149335-2d53bff8-4636-4f8b-bb50-f65d0640149a"
+      },
+      {
+        "name": "Types",
+        "item": [
+          {
+            "name": "Types List",
+            "id": "945be54b-5723-4fb6-b4ce-b739fb0285f5",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://pokeapi.ddev.site/api/type?perPage=15&withPokemon=false",
+                "protocol": "http",
+                "host": [
+                  "pokeapi",
+                  "ddev",
+                  "site"
+                ],
+                "path": [
+                  "api",
+                  "type"
+                ],
+                "query": [
+                  {
+                    "key": "perPage",
+                    "value": "15"
+                  },
+                  {
+                    "key": "withPokemon",
+                    "value": "false"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "33149335-945be54b-5723-4fb6-b4ce-b739fb0285f5"
+          },
+          {
+            "name": "Type ID",
+            "id": "6dbc34bb-f028-4894-97ea-d3915a5749b8",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://pokeapi.ddev.site/api/type/1?withPokemon=true",
+                "protocol": "http",
+                "host": [
+                  "pokeapi",
+                  "ddev",
+                  "site"
+                ],
+                "path": [
+                  "api",
+                  "type",
+                  "1"
+                ],
+                "query": [
+                  {
+                    "key": "withPokemon",
+                    "value": "true"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "33149335-6dbc34bb-f028-4894-97ea-d3915a5749b8"
+          },
+          {
+            "name": "Type Name",
+            "id": "874aed20-6300-496d-bba4-c848dce237db",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://pokeapi.ddev.site/api/type/grass?withPokemon=false",
+                "protocol": "http",
+                "host": [
+                  "pokeapi",
+                  "ddev",
+                  "site"
+                ],
+                "path": [
+                  "api",
+                  "type",
+                  "grass"
+                ],
+                "query": [
+                  {
+                    "key": "withPokemon",
+                    "value": "false"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "33149335-874aed20-6300-496d-bba4-c848dce237db"
+          }
+        ],
+        "id": "ed3288b8-409b-422e-bb33-86337117ab6a",
+        "uid": "33149335-ed3288b8-409b-422e-bb33-86337117ab6a"
+      },
+      {
+        "name": "Custom",
+        "item": [
+          {
+            "name": "Pokemon stats greater than",
+            "id": "0782cef7-cfc2-418b-beea-5c324b4a528b",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://pokeapi.ddev.site/api/pokemon/greaterthan/600?withMove=false&withStat=true&withType=false",
+                "protocol": "http",
+                "host": [
+                  "pokeapi",
+                  "ddev",
+                  "site"
+                ],
+                "path": [
+                  "api",
+                  "pokemon",
+                  "greaterthan",
+                  "600"
+                ],
+                "query": [
+                  {
+                    "key": "withMove",
+                    "value": "false"
+                  },
+                  {
+                    "key": "withStat",
+                    "value": "true"
+                  },
+                  {
+                    "key": "withType",
+                    "value": "false"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "33149335-0782cef7-cfc2-418b-beea-5c324b4a528b"
+          },
+          {
+            "name": "Pokemon stats less than",
+            "id": "f2586ba7-7175-4e49-a334-0b04a14f314f",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://pokeapi.ddev.site/api/pokemon/lessthan/185?withMove=false&withStat=true&withType=false",
+                "protocol": "http",
+                "host": [
+                  "pokeapi",
+                  "ddev",
+                  "site"
+                ],
+                "path": [
+                  "api",
+                  "pokemon",
+                  "lessthan",
+                  "185"
+                ],
+                "query": [
+                  {
+                    "key": "withMove",
+                    "value": "false"
+                  },
+                  {
+                    "key": "withStat",
+                    "value": "true"
+                  },
+                  {
+                    "key": "withType",
+                    "value": "false"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "33149335-f2586ba7-7175-4e49-a334-0b04a14f314f"
+          },
+          {
+            "name": "Pokemon moves greater than",
+            "id": "5f9c518f-98b4-4875-b9d5-a32bf012aabf",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://pokeapi.ddev.site/api/pokemon/movesgreaterthan/150?withMove=false&withStat=false&withType=false",
+                "protocol": "http",
+                "host": [
+                  "pokeapi",
+                  "ddev",
+                  "site"
+                ],
+                "path": [
+                  "api",
+                  "pokemon",
+                  "movesgreaterthan",
+                  "150"
+                ],
+                "query": [
+                  {
+                    "key": "withMove",
+                    "value": "false"
+                  },
+                  {
+                    "key": "withStat",
+                    "value": "false"
+                  },
+                  {
+                    "key": "withType",
+                    "value": "false"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "33149335-5f9c518f-98b4-4875-b9d5-a32bf012aabf"
+          },
+          {
+            "name": "Pokemon moves less than",
+            "id": "5fa9d5bf-df34-4688-abdc-1fda23dabfbc",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://pokeapi.ddev.site/api/pokemon/moveslessthan/2?withMove=false&withStat=false&withType=false",
+                "protocol": "http",
+                "host": [
+                  "pokeapi",
+                  "ddev",
+                  "site"
+                ],
+                "path": [
+                  "api",
+                  "pokemon",
+                  "moveslessthan",
+                  "2"
+                ],
+                "query": [
+                  {
+                    "key": "withMove",
+                    "value": "false"
+                  },
+                  {
+                    "key": "withStat",
+                    "value": "false"
+                  },
+                  {
+                    "key": "withType",
+                    "value": "false"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "uid": "33149335-5fa9d5bf-df34-4688-abdc-1fda23dabfbc"
+          }
+        ],
+        "id": "17efd26b-67f7-4991-87a8-b109161a5fd7",
+        "uid": "33149335-17efd26b-67f7-4991-87a8-b109161a5fd7"
+      }
+    ]
+  }
+}
